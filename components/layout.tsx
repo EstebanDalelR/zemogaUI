@@ -16,6 +16,9 @@ export default function Layout (props) {
           }
           @media only screen 
           and (min-device-width : 736px) {
+            .mainContent{
+              padding: 0 10% 0 10%;
+            }
           }
         `}
       </style>
