@@ -9,6 +9,27 @@ export default function Navbar (props) {
         `}
       </style>
       <style jsx>{`
+          .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-image: radial-gradient(rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.2));
+            color: white;
+          }
+          ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 33%;
+          }
+          li {
+            padding-inline: 1%;
+            min-width: 25%;
+            list-style-type: none;
+          }
+          .pageTitle {
+            padding: 2em;
+          }
           @media only screen 
           and (max-device-width : 736px) {
           }
@@ -17,8 +38,24 @@ export default function Navbar (props) {
           }
         `}
       </style>
-      <div className='mainContent'>
-          Nav
+      <div className='navbar'>
+          <span className="pageTitle">
+            Rule of Thumb
+          </span>
+          <ul>
+            <li>
+              Past trials
+            </li>
+            <li>
+              How it Works
+            </li>
+            <li>
+              Login / Sign up
+            </li>
+            <li>
+              Search
+            </li>
+          </ul>
       </div>
     </>
   )
