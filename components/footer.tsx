@@ -2,12 +2,6 @@
 export default function Footer(props) {
   return (
     <>
-      <style global jsx>{`
-            html, body {
-              margin: 0;
-            }          
-        `}
-      </style>
       <style jsx>{`
           .footer {
             display: flex;

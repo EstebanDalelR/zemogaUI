@@ -2,24 +2,21 @@
 export default function Navbar (props) {
   return (
     <>
-      <style global jsx>{`
-            html, body {
-              margin: 0;
-            }          
-        `}
-      </style>
       <style jsx>{`
           .navbar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-image: radial-gradient(rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.2));
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4) , rgba(0, 0, 0, 0.2));
             color: white;
+          }
+          .navbar>* {
+            width: 50%;
           }
           ul {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-around;
             min-width: 33%;
           }
           li {
