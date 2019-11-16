@@ -1,0 +1,27 @@
+{
+  "name": "zemogaui",
+  "version": "1.0.0",
+  "description": "A test to get a job",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://estebandalelr@github.com/EstebanDalelR/zemogaUI.git"
+  },
+  "keywords": [],
+  "author": "EstebanDalelR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EstebanDalelR/zemogaUI/issues"
+  },
+  "homepage": "https://github.com/EstebanDalelR/zemogaUI#readme",
+  "dependencies": {
+    "next": "^9.1.3",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
