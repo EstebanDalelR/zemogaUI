@@ -1,4 +1,5 @@
 import VoteCardResults from "./voteCardResults"
+import VoteButton from "./voteButton"
 
 export default function VoteCard(props) {
   let { votes } = props
@@ -52,9 +53,7 @@ export default function VoteCard(props) {
           <p className="caseDescription">
             Tahnk you for voting
           </p>
-          <button className="voteButton">
-            vote again
-          </button>
+          <VoteButton />
             <VoteCardResults results={results}/>
         </div>
       </div>
