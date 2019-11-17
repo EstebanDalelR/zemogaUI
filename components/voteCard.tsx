@@ -1,5 +1,15 @@
 
 export default function VoteCard(props) {
+  let { votes } = props
+  let calcPercentages = (): { positive: number; negative: number; } => {
+    let  votesAmount  = votes.votes
+    let total = votesAmount.positive + votesAmount.negative
+    return {
+      positive: Math.trunc((votesAmount.positive / total)*100),
+      negative: Math.trunc((votesAmount.negative / total)*100)
+    }
+  }
+  let results = calcPercentages()
   return (
     <>
       <style jsx>{`
@@ -33,10 +43,10 @@ export default function VoteCard(props) {
       <div className='voteCard'>
         <div className="cardInfo">
           <h3 className="personName">
-            Mark Zuck
+            {votes.name}
           </h3>
           <p className="timeAndType">
-            <span>1 month ago</span> on Entertaimnent
+            <span>{votes.time} ago</span> on {votes.category}
           </p>
           <p className="caseDescription">
             Tahnk you for voting
@@ -45,7 +55,7 @@ export default function VoteCard(props) {
             vote again
           </button>
           <div className="voteResults">
-            %  %
+            {results.positive}% {results.negative}%
           </div>
         </div>
       </div>
