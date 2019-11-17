@@ -10,7 +10,7 @@ export default function VoteCardHolder(props) {
             width: auto;
             height: 100%;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             grid-gap: 2rem;
           }
         `}

@@ -21,7 +21,7 @@ let peopleArray = [
     category: "Business",
     image: "/estebanDalel.jpg",
     votes: {
-      positive: 1,
+      positive: 2,
       negative: 2
     }
   },
@@ -29,9 +29,9 @@ let peopleArray = [
     name: "Malala Youzaif",
     time: "1 month",
     category: "Business",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Shinz%C5%8D_Abe_and_Malala_Yousafzai_%281%29_Cropped.jpg/220px-Shinz%C5%8D_Abe_and_Malala_Yousafzai_%281%29_Cropped.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Malala_Yousafzai.jpg/220px-Malala_Yousafzai.jpg",
     votes: {
-      positive: 1,
+      positive: 3,
       negative: 2
     }
   }

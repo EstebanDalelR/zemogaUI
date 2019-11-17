@@ -5,7 +5,6 @@ import { useState } from "react"
 export default function VoteCard(props) {
   const [hasVoted, changeHasVoted] = useState(false)
   const changeVote = (value) => {
-    console.log(props)
     props.changeVoteCount(props.id, value)
     changeHasVoted(!hasVoted)
   }
@@ -25,30 +24,31 @@ export default function VoteCard(props) {
       <style jsx>{`
           .voteCard {
             min-height: 300px;
+            background: center / 100% no-repeat url(${votes.image});
           }
           .voteCardImg {
-            background: center / 100% no-repeat url(${votes.image});
+            background-image: linear-gradient(rgba(0, 0, 0, 0.1) , rgba(0, 0, 0, 0.9));
             background-clip: border-box;
             width: auto;
             height: 100%;
           }
           .empty{
-            height: 40%;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.0) , rgba(0, 0, 0, 0.2));
+            height: 30%;
           }
           .cardInfo {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2) , rgba(0, 0, 0, 0.4));
+            margin-left: 2rem;
             color: white;
-            margin-left: 1.5rem;
             height: 50%;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: stretch;
+            margin-bottom: 5%;
           }
           h3{
             margin: 0;
-            height: 1rem;
+            font-size: xx-large;
+            font-weight: normal;
           }
           .cardText {
             height: 50%;
@@ -62,10 +62,10 @@ export default function VoteCard(props) {
             display: flex;
           }
           .totalVote{
-            margin-left: -1.5rem;
-            width: 1rem;
-            height: 1rem;
-            ${results.positive > results.negative ? null : "transform: rotate(180deg);"}
+            margin-left: -1.75rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            ${results.positive > results.negative ? null : "transform: rotate(180deg);"};
             background-color: ${results.positive > results.negative ? "LightSeaGreen" : "DarkOrange"}
           }
           .totalVote > img {
@@ -73,6 +73,9 @@ export default function VoteCard(props) {
           }
           p > span {
             font-weight: bold;
+          }
+          p {
+            margin: 0;
           }
           @media only screen 
           and (max-device-width : 736px) {

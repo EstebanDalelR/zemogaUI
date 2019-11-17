@@ -5,9 +5,10 @@ export default function VoteCardResults(props) {
     <>
       <style jsx>{`
           .voteCardResults {
+            --selfHeight: 10%;
             display: flex;
             color: white;
-            height: 10%;
+            height: var(--selfHeight);
           }
           .negative {
             width: ${results.negative}%;
