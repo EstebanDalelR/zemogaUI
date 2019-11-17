@@ -17,7 +17,7 @@ export default function VoteCardHolder(props) {
       </style>
       <div className='voteCardHolder'>
         {props.people.map((person, index) =>
-          <VoteCard votes={person} key={index} />
+          <VoteCard votes={person} key={index} id={index} changeVoteCount={props.changeVoteCount}/>
         )}
       </div>
     </>

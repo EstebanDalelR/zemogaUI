@@ -55,7 +55,7 @@ function VoteButtons(props) {
       </button>
       <button
         className="castVote"
-        onClick={() => props.castVote()}
+        onClick={() => props.castVote(selected)}
       >
         Vote now
         </button>

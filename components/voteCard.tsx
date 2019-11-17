@@ -4,7 +4,11 @@ import { useState } from "react"
 
 export default function VoteCard(props) {
   const [hasVoted, changeHasVoted] = useState(false)
-  const changeVote = () => changeHasVoted(!hasVoted)
+  const changeVote = (value) => {
+    console.log(props)
+    props.changeVoteCount(props.id, value)
+    changeHasVoted(!hasVoted)
+  }
 
   let { votes } = props
   let calcPercentages = (): { positive: number; negative: number; } => {
