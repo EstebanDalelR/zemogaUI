@@ -29,8 +29,8 @@ export default function Footer(props) {
             justify-content: flex-end;
           }
           .social > * {
-            min-width: 33%;
             display: flex;
+            padding-right: 5%;
             align-items: center;
             justify-content: center;
           }
@@ -50,8 +50,16 @@ export default function Footer(props) {
         </div>
         <div className="social">
           <p>Follow us</p>
-          <p>Follow us</p>
-          <p>Follow us</p>
+          <a href='https://www.instagram.com/estebandalelr/' target='_blank'>
+            <div>
+              <img width='40px' height='40px' src='/instagramicon.png' />
+            </div>
+          </a>
+          <a href='https://www.facebook.com/estebandalelr' target='_blank'>
+            <div>
+              <img width='40px' height='40px' src='/facebookicon.png' />
+            </div>
+          </a>
         </div>
       </div>
     </>
