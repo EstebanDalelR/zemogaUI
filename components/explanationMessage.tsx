@@ -7,10 +7,11 @@ export default function ExplanationMessage(props) {
       <style jsx>{`
           .explanationMessage {
             display: ${messageShown ? "flex" : "none"};
-            background-color: lightgrey;
+            background-color: #EBEBEB;
+            color: #333333
             align-items: center;
             justify-content: center;
-            padding: 1%;
+            padding-block: 1%;
           }
           h3 {
             font-weight: normal;
