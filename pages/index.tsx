@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Layout from '../components/layout'
+import ExplanationMessage from '../components/explanationMessage';
 
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
   <Layout>
@@ -9,7 +10,7 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
     </section>
     <section id="homeSecondaryVotes">
       <div className="voteCardsHolder">
-        Card
+        <ExplanationMessage />
         Card
         Card
         Card
