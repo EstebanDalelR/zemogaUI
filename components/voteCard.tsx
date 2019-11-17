@@ -1,3 +1,4 @@
+import VoteCardResults from "./voteCardResults"
 
 export default function VoteCard(props) {
   let { votes } = props
@@ -54,9 +55,7 @@ export default function VoteCard(props) {
           <button className="voteButton">
             vote again
           </button>
-          <div className="voteResults">
-            {results.positive}% {results.negative}%
-          </div>
+            <VoteCardResults results={results}/>
         </div>
       </div>
     </>
