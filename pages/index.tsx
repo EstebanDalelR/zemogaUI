@@ -3,9 +3,18 @@ import Layout from '../components/layout'
 
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
   <Layout>
-    <h1>
-      Hello world! - user agent: {userAgent}
-    </h1>
+    <section id="homeMainVote">
+      MainPic
+      MainCard
+    </section>
+    <section id="homeSecondaryVotes">
+      <div className="voteCardsHolder">
+        Card
+        Card
+        Card
+        Card
+      </div>
+    </section>
   </Layout>
 );
 
