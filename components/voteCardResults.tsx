@@ -26,6 +26,7 @@ export default function VoteCardResults(props) {
             opacity: 0.6;            
             background-color: LightSeaGreen ;
             display: flex;
+            font-size: xx-large;
             align-items: center;
             justify-content: flex-start;
           }
