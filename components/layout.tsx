@@ -7,7 +7,11 @@ export default function Layout (props) {
       <style global jsx>{`
             html, body {
               margin: 0;
-            }          
+            }
+            @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+            div {
+              font-family: 'Monserrat', sans-serif;
+            }
         `}
       </style>
       <style jsx>{`
