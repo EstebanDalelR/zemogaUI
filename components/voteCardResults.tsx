@@ -7,10 +7,11 @@ export default function VoteCardResults(props) {
           .voteCardResults {
             display: flex;
             color: white;
+            height: 10%;
           }
           .negative {
             width: ${results.negative}%;
-            opacity: 0.6;
+            opacity: 0.9;
             background-color: DarkOrange;
             display: flex;
             justify-content: flex-end;
@@ -19,11 +20,12 @@ export default function VoteCardResults(props) {
           }
           .negative > img {
             transform: rotate(180deg);
-            width: 2em;
+            width: 1em;
+            max-width: 2em;
           }
           .positive {
             width: ${100 - results.negative}%;
-            opacity: 0.6;            
+            opacity: 0.9;            
             background-color: LightSeaGreen ;
             display: flex;
             font-size: xx-large;
@@ -31,10 +33,15 @@ export default function VoteCardResults(props) {
             justify-content: flex-start;
           }
           .positive > img {
-            width: 2em;
+            width: 1em;
+            max-width: 2em;
           }
           h3 > span {
             font-size: medium;
+          }
+          h3 {
+            margin: 0;
+            padding-block: 5%;
           }
           @media only screen 
           and (max-device-width : 736px) {

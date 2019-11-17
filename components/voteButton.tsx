@@ -9,27 +9,32 @@ function VoteButtons(props) {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 20%;
+          width: 50%;
         }
         .voteNegative > img {
           transform: rotate(180deg);
         }
         button > img{
-          width: 100%;
+          height: 1em;
+          width: 1em;
+          max-width: 2em;
         }
         .castVote{
           background: none;
           border: solid white;
           color: white;
+          height: 2rem;
           padding: 2%;
         }
         .votePositive {
-          width: 60px;
+          width: 2rem;
+          height: 2rem;
           border: none;
           background-color: LightSeaGreen;
         }
         .voteNegative {
-          width: 60px;
+          width: 2rem;
+          height: 2rem;
           border: none;
           background-color: DarkOrange;
         }
@@ -79,19 +84,18 @@ function VoteAgain(props) {
   )
 }
 export default function VoteButton(props) {
-
-  const [hasVoted, changeHasVoted] = useState(false)
-  const changeVote = () => changeHasVoted(!hasVoted)
   return (
     <>
       <style jsx>{`
-
+          .voteButton{
+            height: 20%;
+          }
         `}
       </style>
       <div className='voteButton'>
-        {hasVoted
-          ? <VoteAgain voteAgain={changeVote} />
-          : <VoteButtons castVote={changeVote} />
+        {props.hasVoted
+          ? <VoteAgain voteAgain={props.changeVote} />
+          : <VoteButtons castVote={props.changeVote} />
         }
       </div>
     </>
