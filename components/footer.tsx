@@ -1,7 +1,7 @@
 
 export default function Footer(props) {
   return (
-    <>
+    <footer>
       <style jsx>{`
           .footer {
             display: flex;
@@ -62,6 +62,6 @@ export default function Footer(props) {
           </a>
         </div>
       </div>
-    </>
+    </footer>
   )
 }

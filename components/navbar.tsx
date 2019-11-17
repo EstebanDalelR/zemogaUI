@@ -1,7 +1,7 @@
 
 export default function Navbar (props) {
   return (
-    <>
+    <nav>
       <style jsx>{`
           .navbar {
             display: flex;
@@ -54,6 +54,6 @@ export default function Navbar (props) {
             </li>
           </ul>
       </div>
-    </>
+    </nav>
   )
 }
