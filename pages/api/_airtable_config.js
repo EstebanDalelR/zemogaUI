@@ -4,5 +4,5 @@ Airtable.configure({
   endpointUrl: 'https://api.airtable.com',
   apiKey: process.env.AIRTABLE_API_KEY
 })
-var base = Airtable.base('appIcM1HrKYkdyOmS')
+var base = Airtable.base('app0ze3NWRmUGZfjp')
 export default base
