@@ -61,7 +61,10 @@ const Home: NextPage = () => {
           Vote
         </h1>
         <div className="voteCardsHolder">
-          <VoteCardHolder people={people} changeVoteCount={changeVoteCount}></VoteCardHolder>
+          <VoteCardHolder
+            people={people}
+            changeVoteCount={changeVoteCount}
+          />
         </div>
       </section>
     </Layout>
