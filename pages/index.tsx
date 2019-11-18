@@ -16,12 +16,12 @@ const Home: NextPage = () => {
     if (value > 0) people[index].votes.positive++
     if (value < 0) people[index].votes.negative++
     let data = {
-        "id": people[index].id,
-        "fields": {
-          "Positive": people[index].votes.positive,
-          "Negative": people[index].votes.negative
-        }
-    } 
+      "id": people[index].id,
+      "fields": {
+        "Positive": people[index].votes.positive,
+        "Negative": people[index].votes.negative
+      }
+    }
     let resp = await fetch(
       "/api/changeVote",
       {
@@ -51,18 +51,18 @@ const Home: NextPage = () => {
   updatePeople()
   return (
     <Layout>
-
       <section id="homeMainVote">
         MainPic
         MainCard
-    </section>
+      </section>
+      <ExplanationMessage />
       <section id="homeSecondaryVotes">
-        <h1>Vote</h1>
+        <h1>
+          Vote
+        </h1>
         <div className="voteCardsHolder">
-          <ExplanationMessage />
           <VoteCardHolder people={people} changeVoteCount={changeVoteCount}></VoteCardHolder>
-          Card
-      </div>
+        </div>
       </section>
     </Layout>
   );
