@@ -57,6 +57,7 @@ const Home: NextPage = () => {
         MainCard
     </section>
       <section id="homeSecondaryVotes">
+        <h1>Vote</h1>
         <div className="voteCardsHolder">
           <ExplanationMessage />
           <VoteCardHolder people={people} changeVoteCount={changeVoteCount}></VoteCardHolder>
