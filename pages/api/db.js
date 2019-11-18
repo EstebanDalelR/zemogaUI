@@ -11,6 +11,7 @@ export default (req, res) => {
     }).all().then(records => {
       records.forEach(function (record) {
         let person = { 
+          id: record.id,
           category: record.get('Category'), 
           name: record.get('Name'), 
           postedAt: record.get('PostedAt'), 
