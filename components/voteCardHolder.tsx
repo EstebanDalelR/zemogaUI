@@ -1,7 +1,7 @@
 import VoteCard from "./voteCard"
-import { useState } from "react"
 
 export default function VoteCardHolder(props) {
+  console.log("resp", props)
 
   return (
     <>
@@ -16,9 +16,12 @@ export default function VoteCardHolder(props) {
         `}
       </style>
       <div className='voteCardHolder'>
-        {props.people.map((person, index) =>
-          <VoteCard votes={person} key={index} id={index} changeVoteCount={props.changeVoteCount}/>
-        )}
+        {props.people.length > 0
+          ? props.people.map((person, index) =>
+            <VoteCard votes={person} key={index} id={index} changeVoteCount={props.changeVoteCount} />
+          )
+          : null
+          }
       </div>
     </>
   )
