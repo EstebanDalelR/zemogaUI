@@ -24,3 +24,5 @@ Use new React features for async calls
 #### UI
 Animations!
 Better CSS and layout
+#### Separation of Concerns
+Currently, all the code lives in the index and is inherited, using the Context API and importing files would help the mantainability
