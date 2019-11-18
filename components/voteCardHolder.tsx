@@ -1,8 +1,6 @@
 import VoteCard from "./voteCard"
 
 export default function VoteCardHolder(props) {
-  console.log("resp", props)
-
   return (
     <>
       <style jsx>{`

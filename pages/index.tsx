@@ -12,19 +12,43 @@ const Home: NextPage = () => {
     const myJson = await response.json();
     return myJson
   }
-
+  async function sendPersonVote(index, value) {
+    if (value > 0) people[index].votes.positive++
+    if (value < 0) people[index].votes.negative++
+    let data = {
+        "id": people[index].id,
+        "fields": {
+          "Positive": people[index].votes.positive,
+          "Negative": people[index].votes.negative
+        }
+    } 
+    let resp = await fetch(
+      "/api/changeVote",
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }
+    )
+    console.log(resp)
+    updatePeople()
+  }
   let changeVoteCount = (personIndex, value) => {
-    if (value > 0) people[personIndex].votes.positive++
-    if (value < 0) people[personIndex].votes.negative++
+    sendPersonVote(personIndex, value)
   }
-  if (!hasFetched) {
-    getPeople()
-      .then(resp => {
-        setPeople(resp.people)
-        setFetched(true)
-      })
-      .catch(err => { console.log(err); return null })
+  let updatePeople = () => {
+    if (!hasFetched) {
+      getPeople()
+        .then(resp => {
+          setPeople(resp.people)
+          setFetched(true)
+        })
+        .catch(err => { console.log(err); return null })
+    }
   }
+  updatePeople()
   return (
     <Layout>
 
