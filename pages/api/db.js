@@ -14,7 +14,7 @@ export default (req, res) => {
           category: record.get('Category'), 
           name: record.get('Name'), 
           postedAt: record.get('PostedAt'), 
-          ImageURL: record.get('ImageURL'), 
+          image: record.get('ImageURL'), 
           votes: {
             positive: record.get('Positive'),
             negative: record.get('Negative')
