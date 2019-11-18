@@ -1,7 +1,8 @@
 import { NextPage } from 'next';
 import Layout from '../components/layout'
 import { useState } from "react"
-const Login: NextPage = () => {
+import Link from 'next/link';
+const Signup: NextPage = () => {
   let [name, setName] = useState("")
   let [password, setPassword] = useState("")
   let [age, setAge] = useState("")
@@ -29,6 +30,7 @@ const Login: NextPage = () => {
             type="text"
             id="name"
             name="name"
+            required
             value={name}
             onChange={(ev)=>setName(ev.target.value)}
           />
@@ -39,6 +41,7 @@ const Login: NextPage = () => {
             type="password"
             id="password"
             value={password}
+            required
             minLength={4}
             onChange={(ev)=>setPassword(ev.target.value)}
             name="password"
@@ -74,8 +77,15 @@ const Login: NextPage = () => {
           <input type="submit" id="submit" name="submit" />
         </div>
       </form>
+      <div>
+        <Link href="/login">
+          <a>
+            Would you rather login?
+          </a>
+        </Link>
+      </div>
     </Layout>
   );
 }
 
-export default Login;
+export default Signup;

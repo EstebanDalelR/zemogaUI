@@ -27,6 +27,7 @@ const Login: NextPage = () => {
           <input
             type="text"
             id="name"
+            required
             name="name"
             value={name}
             onChange={(ev)=>setName(ev.target.value)}
@@ -37,6 +38,7 @@ const Login: NextPage = () => {
           <input
             type="password"
             id="password"
+            required
             value={password}
             minLength={4}
             onChange={(ev)=>setPassword(ev.target.value)}
