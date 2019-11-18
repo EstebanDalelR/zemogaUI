@@ -11,7 +11,7 @@ export default function VoteCardResults(props) {
             height: var(--selfHeight);
           }
           .negative {
-            width: ${results.negative}%;
+            width: ${results.negative||50}%;
             opacity: 0.9;
             background-color: DarkOrange;
             display: flex;
@@ -25,7 +25,7 @@ export default function VoteCardResults(props) {
             max-width: 2em;
           }
           .positive {
-            width: ${100 - results.negative}%;
+            width: ${100 - (results.negative||50)}%;
             opacity: 0.9;            
             background-color: LightSeaGreen ;
             display: flex;
@@ -56,7 +56,7 @@ export default function VoteCardResults(props) {
         <div className="positive">
           <img src={"/thumb.png"} />
           <h3>
-            {results.positive}
+            {results.positive||0}
             <span>
               %
             </span>
@@ -64,7 +64,7 @@ export default function VoteCardResults(props) {
         </div>
         <div className="negative">
           <h3>
-            {results.negative}
+            {results.negative||0}
             <span>
               %
             </span>
