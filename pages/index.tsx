@@ -13,6 +13,7 @@ const Home: NextPage = () => {
     return myJson
   }
   async function sendPersonVote(index, value) {
+    if(checkLogged()){
     if (value > 0) people[index].votes.positive++
     if (value < 0) people[index].votes.negative++
     let data = {
@@ -34,6 +35,9 @@ const Home: NextPage = () => {
     )
     console.log(resp)
     updatePeople()
+    } else {
+      alert("You must be logged in to Vote")
+    }
   }
   let changeVoteCount = (personIndex, value) => {
     sendPersonVote(personIndex, value)
@@ -49,6 +53,17 @@ const Home: NextPage = () => {
     }
   }
   updatePeople()
+  let checkLogged = () => {
+    if (typeof window !== 'undefined') {
+      if (localStorage) {
+        return localStorage.getItem("userId")
+      }
+    }
+/* Candidate for JS Optional Chaining, but experimental
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+*/
+    return false
+  }
   return (
     <Layout>
       <section id="homeMainVote">
