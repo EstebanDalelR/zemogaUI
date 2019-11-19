@@ -26,7 +26,6 @@ const Signup: NextPage = () => {
         body: JSON.stringify(data)
       }
     )
-    console.log(resp)
     setSent(true)
   }
 

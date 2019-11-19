@@ -2,7 +2,7 @@ import base from './_airtable_config'
 import { throws } from 'assert'
 export default (req, res) => {
    const table = base('Cards')
-
+  console.log(req.body)
   try {
     table.update([req.body], function(err, records) {
       if (err) {
@@ -10,6 +10,7 @@ export default (req, res) => {
         throws(err);
         return;
       }
+      res.send(records)
     });
   } catch (error) {
     res.setHeader('Content-Type', 'application/json')

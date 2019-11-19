@@ -31,8 +31,8 @@ const Login: NextPage = () => {
         setFetched(true)
         if (userpass.user.length > 0) {
           if (userpass.user[0].password === password) {
-            setUsetStatus("logged")
             localStorage.setItem("userId", userpass.user[0].id)
+            setUsetStatus("logged")
           } else {
             setUsetStatus("wrongPass")
           }
@@ -47,13 +47,9 @@ const Login: NextPage = () => {
       case "logged":
         ui = <div>
           <Link href="/">
-            <a>
-              <p>
+            <a style={{width: "100%"}} className="loggedIn">
                 Logged in, you may now vote in the home
-                      </p>
-              <p>
                 {name}
-              </p>
             </a>
           </Link>
         </div>
@@ -73,9 +69,6 @@ const Login: NextPage = () => {
       default:
         break;
     }
-    console.log(userStatus)
-    console.log(hasFetched)
-    console.log(ui)
     return ui
   }
   return (

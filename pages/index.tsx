@@ -13,43 +13,50 @@ const Home: NextPage = () => {
     return myJson
   }
   async function sendPersonVote(index, value) {
-    if(checkLogged()){
-    if (value > 0) people[index].votes.positive++
-    if (value < 0) people[index].votes.negative++
-    let data = {
-      "id": people[index].id,
-      "fields": {
-        "Positive": people[index].votes.positive,
-        "Negative": people[index].votes.negative
+    if (checkLogged()) {
+      if (value > 0) people[index].votes.positive++
+      if (value < 0) people[index].votes.negative++
+      let data = {
+        "id": people[index].id,
+        "fields": {
+          "Positive": people[index].votes.positive,
+          "Negative": people[index].votes.negative
+        }
       }
-    }
-    let resp = await fetch(
-      "/api/changeVote",
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      }
-    )
-    console.log(resp)
-    updatePeople()
-    return true
+      let resp = await fetch(
+        "/api/changeVote",
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }
+      )
+      console.log(resp)
+      updatePeople()
+      return true
     } else {
       alert("You must be logged in to Vote")
       return false
     }
   }
   let changeVoteCount = (personIndex, value) => {
-    return sendPersonVote(personIndex, value)
+    let spv = sendPersonVote(personIndex, value)
+    spv
+      .then(() => {
+        setFetched(false)
+        updatePeople()
+        return true
+      })
+      .catch((err) => { console.log(err); return false })
   }
   let updatePeople = () => {
     if (!hasFetched) {
       getPeople()
         .then(resp => {
-          setPeople(resp.people)
           setFetched(true)
+          setPeople(resp.people)
         })
         .catch(err => { console.log(err); return null })
     }
@@ -61,9 +68,9 @@ const Home: NextPage = () => {
         return localStorage.getItem("userId")
       }
     }
-/* Candidate for JS Optional Chaining, but experimental
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
-*/
+    /* Candidate for JS Optional Chaining, but experimental
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+    */
     return false
   }
   return (

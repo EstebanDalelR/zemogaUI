@@ -5,6 +5,7 @@ export default (req, res) => {
   
   const table = base('Users')
   let formula = `{Username} = '${req.body.username}'`
+  console.log(req.body)
   try {
     table.select({
       maxRecords: 1,

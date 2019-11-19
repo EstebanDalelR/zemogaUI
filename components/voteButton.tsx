@@ -55,7 +55,7 @@ function VoteButtons(props) {
       </button>
       <button
         className="castVote"
-        onClick={() => props.castVote(selected)}
+        onClick={() => {props.castVote(selected); props.setHasVoted()}}
       >
         Vote now
         </button>
@@ -76,7 +76,7 @@ function VoteAgain(props) {
       </style>
       <button
         className="voteAgain"
-        onClick={() => props.voteAgain()}
+        onClick={() => {props.voteAgain(); props.setHasVoted()}}
       >
         Vote again
         </button>
@@ -84,6 +84,7 @@ function VoteAgain(props) {
   )
 }
 export default function VoteButton(props) {
+  const [hasVoted, setHasVoted] = useState(false)
   return (
     <>
       <style jsx>{`
@@ -93,9 +94,9 @@ export default function VoteButton(props) {
         `}
       </style>
       <div className='voteButton'>
-        {props.hasVoted
-          ? <VoteAgain voteAgain={props.changeVote} />
-          : <VoteButtons castVote={props.changeVote} />
+        {hasVoted
+          ? <VoteAgain voteAgain={props.changeVote} setHasVoted={()=>setHasVoted(!hasVoted)}/>
+          : <VoteButtons castVote={props.changeVote} setHasVoted={()=>setHasVoted(!hasVoted)}/>
         }
       </div>
     </>
