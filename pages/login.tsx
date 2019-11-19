@@ -21,7 +21,7 @@ const Login: NextPage = () => {
         `}
       </style>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <h3>Create User</h3>
+        <h3>Login</h3>
         <div>
           <label htmlFor="name">Username:</label>
           <input
