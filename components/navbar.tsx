@@ -22,7 +22,7 @@ export default function Navbar(props) {
             </style>
             <Link href={"login"}>
               <a>
-                "Login / Sign up"
+                Login / Sign up
         </a>
             </Link>
           </>
