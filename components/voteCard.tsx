@@ -5,8 +5,9 @@ import { useState } from "react"
 export default function VoteCard(props) {
   const [hasVoted, changeHasVoted] = useState(false)
   const changeVote = (value) => {
-    props.changeVoteCount(props.id, value)
-    changeHasVoted(!hasVoted)
+    if(props.changeVoteCount(props.id, value)=== true){
+      changeHasVoted(!hasVoted)
+    }
   }
 
   let { votes } = props

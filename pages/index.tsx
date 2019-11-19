@@ -35,12 +35,14 @@ const Home: NextPage = () => {
     )
     console.log(resp)
     updatePeople()
+    return true
     } else {
       alert("You must be logged in to Vote")
+      return false
     }
   }
   let changeVoteCount = (personIndex, value) => {
-    sendPersonVote(personIndex, value)
+    return sendPersonVote(personIndex, value)
   }
   let updatePeople = () => {
     if (!hasFetched) {
