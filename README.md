@@ -10,8 +10,13 @@ For this, I used POSH, and proper React with TS, running on Next and deployed wi
 
 The system saves all votes to [airtable](https://airtable.com/), and fetches from there, this gives it little responsiveness but it might be solved with a cache, a CDN and optimistic rendering.
 
+On creating a user, the user is logged in.
+
 ### Caveats
 All data is passing as plaintext, even passwords.  
+It's the front handling the password check (even it this is an small change)
+There is no rate limiting.
+The API is open.
 The exercise is incomplete.
 
 ### Improvements
