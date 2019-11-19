@@ -14,14 +14,14 @@ export default function Navbar(props) {
         </button>
           : loggedUi = <>
             <style jsx>{`
-          a {
+          .login {
             color: white;
             text-decoration: none;
           }
          `}
             </style>
             <Link href={"login"}>
-              <a>
+              <a className="login">
                 Login / Sign up
         </a>
             </Link>
