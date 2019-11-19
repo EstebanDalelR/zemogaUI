@@ -2,7 +2,6 @@ import base from './_airtable_config'
 import { throws } from 'assert'
 export default (req, res) => {
    const table = base('Users')
-  console.log(req.body)
   try {
     table.create([{"fields": req.body}], function(err, records) {
       if (err) {
@@ -10,6 +9,11 @@ export default (req, res) => {
         throws(err);
         return;
       }
+      records.forEach(function (record) {
+        res.setHeader('Content-Type', 'application/json')
+        res.statusCode = 200
+        res.end(JSON.stringify(record.getId()))
+      });
     });
   } catch (error) {
     res.setHeader('Content-Type', 'application/json')
