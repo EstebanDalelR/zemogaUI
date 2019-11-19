@@ -32,6 +32,7 @@ const Login: NextPage = () => {
         if (userpass.user.length > 0) {
           if (userpass.user[0].password === password) {
             setUsetStatus("logged")
+            localStorage.setItem("userId", userpass.user[0].id)
           } else {
             setUsetStatus("wrongPass")
           }
