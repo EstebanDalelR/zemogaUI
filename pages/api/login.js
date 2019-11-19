@@ -4,15 +4,18 @@ export default (req, res) => {
   const user = []
   
   const table = base('Users')
-
+  let formula = `{Username} = '${req.body.username}'`
   try {
     table.select({
-      view: 'Grid view'
+      maxRecords: 1,
+      view: 'Grid view',
+      fields: ["Username","Password"],
+      filterByFormula: formula
     }).all().then(records => {
       records.forEach(function (record) {
         let person = { 
           id: record.id,
-          username: record.get('Username'), 
+          username: record.get('Username'),
           password: record.get('Password')
         }
         user.push(person)
