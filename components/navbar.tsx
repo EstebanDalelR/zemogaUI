@@ -1,6 +1,36 @@
 import Link from 'next/link'
 
 export default function Navbar(props) {
+  let checkLogged = () => {
+    let loggedUi = <></>
+    if (typeof window !== 'undefined') {
+      if (localStorage) {
+        localStorage.getItem("userId")
+          ? loggedUi =
+          <button
+            onClick={() => localStorage.removeItem("userId")}
+          >
+            Logout
+        </button>
+          : loggedUi = <>
+            <style jsx>{`
+          a {
+            color: white;
+            text-decoration: none;
+          }
+         `}
+            </style>
+            <Link href={"login"}>
+              <a>
+                "Login / Sign up"
+        </a>
+            </Link>
+          </>
+      }
+    }
+
+    return loggedUi
+  }
   return (
     <nav>
       <style jsx>{`
@@ -60,11 +90,7 @@ export default function Navbar(props) {
             </Link>
           </li>
           <li>
-            <Link href={"login"}>
-              <a>
-                Login / Sign up
-            </a>
-            </Link>
+            {checkLogged()}
           </li>
           <li>
             <Link href={"search"}>
