@@ -33,7 +33,6 @@ const Home: NextPage = () => {
           body: JSON.stringify(data)
         }
       )
-      console.log(resp)
       updatePeople()
       return true
     } else {
